@@ -1,0 +1,29 @@
+.title {
+  position: relative;
+  margin-top: 0;
+  line-height: 1.2;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  
+  &::after {
+    display: block;
+    position: absolute;
+    content: "";
+    bottom: -15px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: @red;
+  }
+  
+  &--center {
+    text-align: center;
+    
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

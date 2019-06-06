@@ -1,0 +1,49 @@
+.benefits {
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.benefits__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.benefits__info {
+  width: ~"calc(100% - 390px)";
+  padding-right: 85px;
+}
+
+.benefits__widget {
+  width: 390px;
+}
+
+.benefits__list {
+  .reset();
+  list-style: none;
+  margin-top: 50px;
+}
+
+.benefits__item {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 40px;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background-image: url(../img/icons/right-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.benefits__title {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 400;
+}
