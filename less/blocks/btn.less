@@ -1,11 +1,13 @@
 .btn {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   padding: 5px 40px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-size: 14px;
   letter-spacing: 0.05em;
   line-height: 1;
   color: @red;
+  text-align: center;
   border-radius: 15px;
   border: 1px solid @red;
   .transition();
@@ -15,5 +17,16 @@
     background-color: @red;
     color: #fff;
     .transition();
+  }
+  
+  &--red {
+    background-color: @red;
+    color: #fff;
+    
+    &:hover,
+    &:active {
+      color: @red;
+      background-color: rgba(255,255,255,0);
+    }
   }
 }
