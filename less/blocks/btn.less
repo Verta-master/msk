@@ -1,0 +1,19 @@
+.btn {
+  display: block;
+  padding: 5px 40px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: @red;
+  border-radius: 15px;
+  border: 1px solid @red;
+  .transition();
+  
+  &:hover,
+  &:active {
+    background-color: @red;
+    color: #fff;
+    .transition();
+  }
+}
