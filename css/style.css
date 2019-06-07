@@ -1131,6 +1131,15 @@ button {
 .footer__link--mail:active {
   text-decoration: underline;
 }
+.modal {
+  padding: 30px;
+}
+.modal__field {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-bottom: 30px;
+}
 @media (max-width: 1400px) {
   .promo__prev {
     left: 10px;
