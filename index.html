@@ -75,14 +75,20 @@
     <section class="promo">
       <div class="swiper-container promo__slider">
         <div class="swiper-wrapper">
-          <div class="swiper-slide promo__slide" style="background-image: url(img/images/slide-1.jpg)">
+          <div class="swiper-slide promo__slide">
+            <figure class="promo__img" data-swiper-animation="zoom">
+              <img src="img/images/slide-1.jpg" alt="Slide">
+            </figure>
             <div class="wrapper promo__wrap">
               <p class="promo__title" data-swiper-animation="fadeInDown">Кредитование малого бизнеса</p>
               <p class="promo__subtitle" data-swiper-animation="fadeInUp">Большие финансовые возможности<br>для развития малого бизнеса</p>
               <a href="#" class="btn btn--red promo__btn" data-swiper-animation="fadeInUp">Получить консультацию</a>
             </div>
           </div>
-          <div class="swiper-slide promo__slide" style="background-image: url(img/images/slide-1.jpg)">
+          <div class="swiper-slide promo__slide">
+            <figure class="promo__img" data-swiper-animation="zoom">
+              <img src="img/images/bg-pic.jpg" alt="Slide">
+            </figure>
             <div class="wrapper promo__wrap">
               <p class="promo__title" data-swiper-animation="fadeInDown">ФИНАНСИРОВАНИЕ БИЗНЕСА</p>
               <p class="promo__subtitle" data-swiper-animation="fadeInUp">Краткосрочное финансирование - быстрое решение текущих задач, пополнение оборотных средств, овердрафтное кредитование</p>
@@ -274,12 +280,6 @@
       }
     });
   </script>
-    
-<!--
-//    mySwiper1.on('slideChange', function () {
-//      $('.promo__title').addClass('move-up');
-//    });
--->
     
   <script>
     var mySwiper = new Swiper ('.brands__slider', {
