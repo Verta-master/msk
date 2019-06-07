@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:400,500,900&display=swap&subset=cyrillic-ext" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -76,19 +77,18 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide promo__slide" style="background-image: url(img/images/slide-1.jpg)">
             <div class="wrapper promo__wrap">
-              <p class="promo__title">Кредитование малого бизнеса</p>
-              <p class="promo__subtitle">Большие финансовые возможности<br>для развития малого бизнеса</p>
-              <a href="#" class="btn btn--red promo__btn">Получить консультацию</a>
+              <p class="promo__title" data-swiper-animation="fadeInDown">Кредитование малого бизнеса</p>
+              <p class="promo__subtitle" data-swiper-animation="fadeInUp">Большие финансовые возможности<br>для развития малого бизнеса</p>
+              <a href="#" class="btn btn--red promo__btn" data-swiper-animation="fadeInUp">Получить консультацию</a>
             </div>
           </div>
           <div class="swiper-slide promo__slide" style="background-image: url(img/images/slide-1.jpg)">
             <div class="wrapper promo__wrap">
-              <p class="promo__title">ФИНАНСИРОВАНИЕ БИЗНЕСА</p>
-              <p class="promo__subtitle">Краткосрочное финансирование - быстрое решение текущих задач, пополнение оборотных средств, овердрафтное кредитование</p>
-              <a href="#" class="btn btn--red promo__btn">Получить консультацию</a>
+              <p class="promo__title" data-swiper-animation="fadeInDown">ФИНАНСИРОВАНИЕ БИЗНЕСА</p>
+              <p class="promo__subtitle" data-swiper-animation="fadeInUp">Краткосрочное финансирование - быстрое решение текущих задач, пополнение оборотных средств, овердрафтное кредитование</p>
+              <a href="#" class="btn btn--red promo__btn" data-swiper-animation="fadeInUp">Получить консультацию</a>
             </div>
           </div>
-          
         </div>
         <div class="swiper-button-prev promo__prev"></div>
         <div class="swiper-button-next promo__next"></div>
@@ -226,25 +226,62 @@
   
   <!-- Modal window -->
   <div style="display: none;" id="call" class="modal">
-  
+    <p class="title title--center">Заказать звонок</p>
+    <form action="#" class="modal__form">
+      <fieldset class="modal__field">
+        <label for="name" class="order__label">Ваше имя:</label>
+        <input type="text" id="name" class="order__input" placeholder="Укажите имя">
+      </fieldset>
+      <fieldset class="modal__field">
+        <label for="tel" class="order__label">Номер телефона:</label>
+        <input type="tel" id="tel" class="order__input" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _">
+      </fieldset>
+      <button type="submit" class="btn btn--red order__btn">Оставить заявку</button>
+      <input type="checkbox" id="check" class="checkbox" checked>
+      <label for="check" class="checkbox-label">Я согласен с условиями <a href="#">обработки персональных данных</a></label>
+    </form>
   </div>
   
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.1/jquery.fancybox.min.js"></script>
+  <script src="js/swiper-animation.js"></script>
 
   <!-- Sliders -->
   <script>
-    var mySwiper = new Swiper ('.promo__slider', {
+    var swiperAnimation = new SwiperAnimation();
+    var mySwiper1 = new Swiper ('.promo__slider', {
       navigation: {
         nextEl: '.promo__next',
         prevEl: '.promo__prev',
       },
       preventClicks: false,
       preventClicksPropagation: false,
+      loop: true,
+      effect: 'fade',
+      autoplay: true,
+      autoplay: {
+        delay: 4000,
+      },
+      on: {
+        init: function () {
+          swiperAnimation.init(this).animate();
+        },
+        slideChange: function () {
+          swiperAnimation.init(this).animate();
+        }
+      }
     });
+  </script>
     
+<!--
+//    mySwiper1.on('slideChange', function () {
+//      $('.promo__title').addClass('move-up');
+//    });
+-->
+    
+  <script>
     var mySwiper = new Swiper ('.brands__slider', {
       navigation: {
         nextEl: '.brands__next',
